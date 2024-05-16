@@ -23,48 +23,121 @@
         <div class="row">
 
             <!--  Sinistra-->
-            <div class="col-4">
+            <div id="left" class="col-4">
 
                 <!--  Profilo -->
-                <div class="row">
+                <div class="row py-2">
 
                     <!-- Foto immagine profilo -->
-                    <div class="col-6">
-                        Immagine
+                    <div class="col-6 d-flex align-items-center">
+                        <img src="https://i.pravatar.cc/50" class="img-avatar">
+                        <span>Giuseppe</span>
                     </div>
 
                     <!-- Item Profilo -->
-                    <div class="col-6">
-                        Item
+                    <div class="col-6 d-flex justify-content-end align-items-center">
+                        <span><i class="fa-solid fa-circle-notch"></i></span>
+                        <span><i class="fa-solid fa-message"></i></span>
+                        <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
                     </div>
 
                 </div>
 
                 <!--  Notifiche -->
-                <div class="row">
+                <div class="row py-2">
 
                     <!-- Immagine silenzia notifiche -->
-                    <div class="col-3">Notifiche</div>
+                    <div class="col-2">
+                        <i class="p-2 fs-3 img-avatar bg-danger fa-solid fa-bell-slash"></i>
+                    </div>
 
                     <!-- Testo notifiche -->
-                    <div class="col-9">
+                    <div class="col-10">
 
                         <div class="row">
-                            <div class="col-12">testo1</div>
-                            <div class="col-12">testo2</div>
-
+                            <div class="col-12 fw-bold testo-piccolo">Ricevi notifiche di nuovi messaggi</div>
+                            <div class="col-12 testo-piccolo"><a href="">Attiva notifiche desktop</a></div>
                         </div>
                     </div>
                 </div>
 
                 <!--  Cerca contatto -->
-                <div class="row">
-                    <div class="col-12">Cerca contatto</div>
+                <div class="row py-2">
+                    <div class="col-2 p-0"><button><i class="fa-solid fa-magnifying-glass"></i></button></div>
+                    <div class="col-10 p-0"><input type="text" placeholder="cerca contatto"></div>
+
                 </div>
 
                 <!--  Contatti -->
-                <div class="row">
-                    <div class="col-12">Contatti</div>
+                <div class="row py-2">
+                    <div class="col-12">
+
+
+                        <div class="row py-2">
+                            <!-- Immagine -->
+                            <div class="col-2 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
+                                    class="img-avatar"> </div>
+
+                            <!-- Nome contatto -->
+                            <div class="col-8 d-flex justify-content-center flex-column">
+
+                                <div class="row">
+                                    <div class="col-12">Michele</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
+                                </div>
+
+                            </div>
+
+                            <!-- Orario -->
+                            <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
+                        </div>
+
+                        <div class="row py-2">
+                            <!-- Immagine -->
+                            <div class="col-2 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
+                                    class="img-avatar"> </div>
+
+                            <!-- Nome contatto -->
+                            <div class="col-8 d-flex justify-content-center flex-column">
+
+                                <div class="row">
+                                    <div class="col-12">Michele</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
+                                </div>
+
+                            </div>
+
+                            <!-- Orario -->
+                            <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
+                        </div>
+                        <div class="row py-2">
+                            <!-- Immagine -->
+                            <div class="col-2 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
+                                    class="img-avatar"> </div>
+
+                            <!-- Nome contatto -->
+                            <div class="col-8 d-flex justify-content-center flex-column">
+
+                                <div class="row">
+                                    <div class="col-12">Michele</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
+                                </div>
+
+                            </div>
+
+                            <!-- Orario -->
+                            <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -72,28 +145,36 @@
             <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <!--  Destra -->
-            <div class="col-8">
+            <div id="right" class="col-8">
 
                 <!--  Contatto LIVE -->
                 <div class="row">
-                    <div class="col-6">Immagine</div>
+                    <div class="col-6">
+                        <img src="" alt="">ss
+                    </div>
                     <div class="col-6">item</div>
                 </div>
 
                 <!--  Chat -->
                 <div class="row">
-                    <div class="col-6"></div>
-                    <div class="col-6">Chat</div>
-                </div>
+                    <div class="col-12">
 
-                <div class="row">
-                    <div class="col-6"></div>
-                    <div class="col-6">Chat</div>
-                </div>
+                        <div class="row">
+                            <div class="col-6"></div>
+                            <div class="col-6">Chat</div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-6">Chat</div>
-                    <div class="col-6"></div>
+                        <div class="row">
+                            <div class="col-6"></div>
+                            <div class="col-6">Chat</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">Chat</div>
+                            <div class="col-6"></div>
+                        </div>
+
+                    </div>
                 </div>
 
                 <!--  Invia Messaggio -->
