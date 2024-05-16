@@ -5,5 +5,12 @@
 }
 
 body {
+    height: 100vh;
+    background: rgb(0, 150, 136);
+    background: linear-gradient(180deg, rgba(0, 150, 136, 1) 30%, rgba(219, 219, 211, 1) 30%);
     font-family: sans-serif;
+}
+
+#app {
+    background-color: red;
 }
