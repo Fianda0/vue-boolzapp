@@ -73,39 +73,18 @@
                     <div class="col-12">
 
 
-                        <div class="row py-2">
+                        <div v-for="element in contacts" class="row py-2">
 
                             <!-- Immagine -->
-                            <div class="col-2 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
-                                    class="img-avatar"> </div>
-
-                            <!-- Nome contatto -->
-                            <div class="col-8 d-flex justify-content-center flex-column">
-
-                                <div class="row">
-                                    <div class="col-12">Michele</div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
-                                </div>
-
+                            <div class="col-2 d-flex align-items-center img-avatar">
+                                <img :src="element.avatar" class="img-avatar">
                             </div>
 
-                            <!-- Orario -->
-                            <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
-                        </div>
-
-                        <div class="row py-2">
-                            <!-- Immagine -->
-                            <div class="col-2 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
-                                    class="img-avatar"> </div>
-
                             <!-- Nome contatto -->
                             <div class="col-8 d-flex justify-content-center flex-column">
 
                                 <div class="row">
-                                    <div class="col-12">Michele</div>
+                                    <div class="col-12">{{element.name}}</div>
                                 </div>
 
                                 <div class="row">
