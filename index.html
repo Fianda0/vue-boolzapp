@@ -20,7 +20,7 @@
     <div id="app" class="container">
 
 
-        <div class="row">
+        <div class="row" style="min-height: 80vh;">
 
             <!--  Sinistra-->
             <div id="left" class="col-4">
@@ -74,6 +74,7 @@
 
 
                         <div class="row py-2">
+
                             <!-- Immagine -->
                             <div class="col-2 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
                                     class="img-avatar"> </div>
@@ -116,27 +117,7 @@
                             <!-- Orario -->
                             <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
                         </div>
-                        <div class="row py-2">
-                            <!-- Immagine -->
-                            <div class="col-2 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
-                                    class="img-avatar"> </div>
 
-                            <!-- Nome contatto -->
-                            <div class="col-8 d-flex justify-content-center flex-column">
-
-                                <div class="row">
-                                    <div class="col-12">Michele</div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
-                                </div>
-
-                            </div>
-
-                            <!-- Orario -->
-                            <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
-                        </div>
                     </div>
                 </div>
 
@@ -145,43 +126,62 @@
             <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <!--  Destra -->
-            <div id="right" class="col-8">
+            <div id="right" class="col-8 d-flex flex-column justify-content-between">
 
                 <!--  Contatto LIVE -->
-                <div class="row">
-                    <div class="col-6">
-                        <img src="" alt="">ss
+                <div class="row py-2">
+                    <!-- Immagine -->
+                    <div class="col-1 d-flex align-items-center img-avatar"> <img src="https://i.pravatar.cc/50"
+                            class="img-avatar"> </div>
+
+                    <!-- Nome contatto -->
+                    <div class="col-9 d-flex justify-content-center flex-column">
+
+                        <div class="row">
+                            <div class="col-12">Michele</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
+                        </div>
+
                     </div>
-                    <div class="col-6">item</div>
+
+                    <!-- Orario -->
+                    <div class="col-2 d-flex align-items-center justify-content-end testo-piccolo">
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <span><i class="fa-solid fa-paperclip"></i></span>
+                        <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                    </div>
                 </div>
 
                 <!--  Chat -->
-                <div class="row">
+                <div id="chat" class="row">
                     <div class="col-12">
 
-                        <div class="row">
-                            <div class="col-6"></div>
-                            <div class="col-6">Chat</div>
+                        <div class="row justify-content-evenly">
+                            <div class="col-4"></div>
+                            <div class="col-4 bck-green">Chat</div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-6"></div>
-                            <div class="col-6">Chat</div>
+                        <div class="row justify-content-evenly">
+                            <div class="col-4"></div>
+                            <div class="col-4 bck-green">Chat</div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-6">Chat</div>
-                            <div class="col-6"></div>
+                        <div class="row justify-content-evenly">
+                            <div class="col-4 bck-white">Chat</div>
+                            <div class="col-4"></div>
                         </div>
 
                     </div>
                 </div>
 
                 <!--  Invia Messaggio -->
-                <div class="row">
-                    <div class="col-2">face</div>
-                    <div class="col-8">Messaggio</div>
-                    <div class="col-2">audio</div>
+                <div class="row py-2">
+                    <div class="col-1"><i class="fa-regular fa-face-smile"></i></div>
+                    <div class="col-10"><input type="text" placeholder="Scrivi un messaggio"></div>
+                    <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
                 </div>
 
             </div>

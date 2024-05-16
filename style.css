@@ -29,6 +29,7 @@ button {
 
 #app {
     background-color: red;
+    min-height: 80vh;
 }
 
 #left {
@@ -46,5 +47,20 @@ button {
 
 #right {
     border: 1px solid black;
+
+}
+
+#chat {
+    height: 90%;
+}
+
+.bck-green {
+    background-color: #d5f9ba;
+    margin: 0.2rem 0;
+}
+
+.bck-white {
+    background-color: white;
+    margin: 0.2rem 0;
 
 }
