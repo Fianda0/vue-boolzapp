@@ -46,7 +46,7 @@ button {
 }
 
 #left {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
 }
 
 #notifiche {
@@ -71,11 +71,13 @@ button {
 }
 
 #right {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
 
 }
 
 #chat {
+    overflow: auto;
+    padding-top: 1rem;
     height: 90%;
     background-image: url('./img/mine.jpg');
 }

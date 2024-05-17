@@ -75,7 +75,7 @@
 
                         <template v-for="element,i in contacts">
 
-                            <div class="row py-2 sfondo-wh contatto" @click="chatVisibile(i)">
+                            <div class="row py-2 sfondo-wh contatto" @click=" clickVisibile(i)">
 
                                 <!-- Immagine -->
                                 <div class="col-2 d-flex align-items-center img-avatar">
@@ -110,7 +110,7 @@
             <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <!--  Destra -->
-            <div id="right" class="col-8 d-flex flex-column justify-content-between">
+            <div id="right" class="col-8 d-flex flex-column justify-content-between sfondo-wh">
 
                 <!--  Contatto LIVE -->
                 <template v-for="element, i in contacts">
