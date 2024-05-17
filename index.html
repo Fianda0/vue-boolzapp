@@ -73,31 +73,35 @@
                 <div class="row">
                     <div class="col-12">
 
+                        <template v-for="element,i in contacts">
 
-                        <div v-for="element in contacts" class="row py-2 sfondo-wh contatto">
+                            <div class="row py-2 sfondo-wh contatto" @click="chatVisibile(i)">
 
-                            <!-- Immagine -->
-                            <div class="col-2 d-flex align-items-center img-avatar">
-                                <img :src="element.avatar" class="img-avatar">
-                            </div>
-
-                            <!-- Nome contatto -->
-                            <div class="col-8 d-flex justify-content-center flex-column">
-
-                                <div class="row">
-                                    <div class="col-12">{{element.name}}</div>
+                                <!-- Immagine -->
+                                <div class="col-2 d-flex align-items-center img-avatar">
+                                    <img :src="element.avatar" class="img-avatar">
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
+                                <!-- Nome contatto -->
+                                <div class="col-8 d-flex justify-content-center flex-column">
+
+                                    <div class="row">
+                                        <div class="col-12">{{element.name}}</div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 testo-piccolo">
+                                            {{lastElement(element.messages).message}}</div>
+                                    </div>
+
+
                                 </div>
 
+                                <!-- Orario -->
+                                <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
                             </div>
 
-                            <!-- Orario -->
-                            <div class="col-2 d-flex align-items-center testo-piccolo"> 12:00</div>
-                        </div>
-
+                        </template>
                     </div>
                 </div>
 
@@ -142,25 +146,23 @@
 
 
                         <!--  Chat -->
-
                         <div id="chat" class="row">
                             <div class="col-12">
+                                <template v-for="messaggio,i in contacts[i].messages">
+                                    <template v-if="messaggio.status=='sent' ">
+                                        <div class="row justify-content-evenly">
+                                            <div class="col-4"></div>
+                                            <div class="col-4 bck-green py-1">{{messaggio.message}}</div>
+                                        </div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="row justify-content-evenly">
+                                            <div class="col-4 bck-white py-1">{{messaggio.message}}</div>
+                                            <div class="col-4"></div>
+                                        </div>
+                                    </template>
 
-                                <div class="row justify-content-evenly">
-                                    <div class="col-4"></div>
-                                    <div class="col-4 bck-green py-1">chat</div>
-                                </div>
-
-                                <div class="row justify-content-evenly">
-                                    <div class="col-4"></div>
-                                    <div class="col-4 bck-green py-1">Chat</div>
-                                </div>
-
-                                <div class="row justify-content-evenly">
-                                    <div class="col-4 bck-white py-1">Chat</div>
-                                    <div class="col-4"></div>
-                                </div>
-
+                                </template>
                             </div>
                         </div>
 
@@ -168,7 +170,8 @@
                         <div class="row py-2 sfondo-gy d-flex align-items-center">
                             <div class="col-1"><i class="fa-regular fa-face-smile"></i></div>
                             <div class="col-10"><input class="bord-radius" type="text"
-                                    placeholder="Scrivi un messaggio"></div>
+                                    placeholder="Scrivi un messaggio">
+                            </div>
                             <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
                         </div>
                     </template>

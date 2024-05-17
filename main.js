@@ -166,8 +166,21 @@ createApp({
             }
           ],
         }
-      ]
-
+      ],
+      chatAttiva: 0
     }
+  },
+  methods: {
+    chatVisibile(i) {
+
+      this.contacts[i].visible = 'true'
+      console.log(i)
+
+    },
+    lastElement(array) {
+      const ultimoIndice = array.length - 1
+      return array[ultimoIndice]
+    }
+
   }
 }).mount('#app')
