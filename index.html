@@ -20,14 +20,13 @@
     <div id="app" class="container">
 
 
-        <div class="row" style="min-height: 80vh;">
+        <div class="row">
 
             <!--  Sinistra-->
             <div id="left" class="col-4">
 
                 <!--  Profilo -->
-                <!--  Contatto LIVE -->
-                <div class="row py-2">
+                <div class="row py-2 sfondo-gy head-superiore">
                     <!-- Immagine -->
                     <div class="col-2 d-flex align-items-center img-avatar"> <img src="./img/avatar_1.jpg"
                             class="img-avatar"> </div>
@@ -37,7 +36,7 @@
                         <div class="col-12">Giuseppe</div>
                     </div>
 
-                    <!-- Orario -->
+                    <!-- item -->
                     <div class="col-2 d-flex align-items-center justify-content-end testo-piccolo">
                         <span><i class="fa-solid fa-circle-notch"></i></span>
                         <span><i class="fa-solid fa-message"></i></span>
@@ -46,11 +45,11 @@
                 </div>
 
                 <!--  Notifiche -->
-                <div class="row py-2">
+                <div id="notifiche" class="row py-2">
 
                     <!-- Immagine silenzia notifiche -->
                     <div class="col-2">
-                        <i class="p-2 fs-3 img-avatar bg-danger fa-solid fa-bell-slash"></i>
+                        <i class="p-2 fs-3 img-avatar fa-solid fa-bell-slash"></i>
                     </div>
 
                     <!-- Testo notifiche -->
@@ -64,18 +63,18 @@
                 </div>
 
                 <!--  Cerca contatto -->
-                <div class="row py-2">
+                <div class="row py-2 sfondo-gy">
                     <div class="col-2 p-0"><button><i class="fa-solid fa-magnifying-glass"></i></button></div>
                     <div class="col-10 p-0"><input type="text" placeholder="cerca contatto"></div>
 
                 </div>
 
                 <!--  Contatti -->
-                <div class="row py-2">
+                <div class="row">
                     <div class="col-12">
 
 
-                        <div v-for="element in contacts" class="row py-2">
+                        <div v-for="element in contacts" class="row py-2 sfondo-wh contatto">
 
                             <!-- Immagine -->
                             <div class="col-2 d-flex align-items-center img-avatar">
@@ -110,61 +109,70 @@
             <div id="right" class="col-8 d-flex flex-column justify-content-between">
 
                 <!--  Contatto LIVE -->
-                <div class="row py-2">
-                    <!-- Immagine -->
-                    <div class="col-1 d-flex align-items-center img-avatar"> <img src="./img/avatar_1.jpg"
-                            class="img-avatar"> </div>
+                <template v-for="element, i in contacts">
+                    <template v-if="element.visible">
+                        <div class="row py-2 sfondo-gy head-superiore">
+                            <!-- Immagine -->
+                            <div class="col-1 d-flex align-items-center img-avatar">
+                                <img :src="element.avatar" class="img-avatar">
+                            </div>
 
-                    <!-- Nome contatto -->
-                    <div class="col-9 d-flex justify-content-center flex-column">
 
-                        <div class="row">
-                            <div class="col-12">Michele</div>
+                            <!-- Nome contatto -->
+                            <div class="col-9 d-flex justify-content-center flex-column">
+
+                                <div class="row">
+                                    <div class="col-12">{{element.name}}</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
+                                </div>
+
+                            </div>
+
+                            <!-- Orario -->
+                            <div class="col-2 d-flex align-items-center justify-content-end testo-piccolo">
+                                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <span><i class="fa-solid fa-paperclip"></i></span>
+                                <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                            </div>
+
                         </div>
 
-                        <div class="row">
-                            <div class="col-12 testo-piccolo">ultimo messaggio inviato</div>
+
+                        <!--  Chat -->
+
+                        <div id="chat" class="row">
+                            <div class="col-12">
+
+                                <div class="row justify-content-evenly">
+                                    <div class="col-4"></div>
+                                    <div class="col-4 bck-green py-1">chat</div>
+                                </div>
+
+                                <div class="row justify-content-evenly">
+                                    <div class="col-4"></div>
+                                    <div class="col-4 bck-green py-1">Chat</div>
+                                </div>
+
+                                <div class="row justify-content-evenly">
+                                    <div class="col-4 bck-white py-1">Chat</div>
+                                    <div class="col-4"></div>
+                                </div>
+
+                            </div>
                         </div>
 
-                    </div>
-
-                    <!-- Orario -->
-                    <div class="col-2 d-flex align-items-center justify-content-end testo-piccolo">
-                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-                    </div>
-                </div>
-
-                <!--  Chat -->
-                <div id="chat" class="row">
-                    <div class="col-12">
-
-                        <div class="row justify-content-evenly">
-                            <div class="col-4"></div>
-                            <div class="col-4 bck-green">Chat</div>
+                        <!--  Invia Messaggio -->
+                        <div class="row py-2 sfondo-gy d-flex align-items-center">
+                            <div class="col-1"><i class="fa-regular fa-face-smile"></i></div>
+                            <div class="col-10"><input class="bord-radius" type="text"
+                                    placeholder="Scrivi un messaggio"></div>
+                            <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
                         </div>
-
-                        <div class="row justify-content-evenly">
-                            <div class="col-4"></div>
-                            <div class="col-4 bck-green">Chat</div>
-                        </div>
-
-                        <div class="row justify-content-evenly">
-                            <div class="col-4 bck-white">Chat</div>
-                            <div class="col-4"></div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--  Invia Messaggio -->
-                <div class="row py-2">
-                    <div class="col-1"><i class="fa-regular fa-face-smile"></i></div>
-                    <div class="col-10"><input type="text" placeholder="Scrivi un messaggio"></div>
-                    <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
-                </div>
-
+                    </template>
+                </template>
             </div>
         </div>
     </div>
