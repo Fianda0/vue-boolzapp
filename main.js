@@ -8,7 +8,7 @@ createApp({
         {
           name: 'Michele',
           avatar: './img/avatar_1.jpg',
-          visible: false,
+          visible: true,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -30,7 +30,7 @@ createApp({
         {
           name: 'Fabio',
           avatar: './img/avatar_2.jpg',
-          visible: true,
+          visible: false,
           messages: [
             {
               date: '20/03/2020 16:30:00',
@@ -167,7 +167,12 @@ createApp({
           ],
         }
       ],
-      myMessage: ''
+      myMessage: '',
+      risposta: {
+        date: new Date().toLocaleString(),
+        message: 'Ok',
+        status: 'recived'
+      }
     }
   },
   methods: {
@@ -194,6 +199,7 @@ createApp({
         status: 'sent'
       }
       elemento.messages.push(newMessage)
+      elemento.messages.push(this.risposta)
       this.myMessage = ''
       console.log(elemento.messages);
 
