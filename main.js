@@ -30,7 +30,7 @@ createApp({
         {
           name: 'Fabio',
           avatar: './img/avatar_2.jpg',
-          visible: false,
+          visible: true,
           messages: [
             {
               date: '20/03/2020 16:30:00',
@@ -167,6 +167,7 @@ createApp({
           ],
         }
       ],
+      myMessage: ''
     }
   },
   methods: {
@@ -184,6 +185,18 @@ createApp({
     lastElement(array) {
       const ultimoIndice = array.length - 1
       return array[ultimoIndice]
+    },
+
+    addMessage(elemento, index) {
+      let newMessage = {
+        date: new Date().toLocaleString(),
+        message: this.myMessage,
+        status: 'sent'
+      }
+      elemento.messages.push(newMessage)
+      this.myMessage = ''
+      console.log(elemento.messages);
+
     }
 
   }

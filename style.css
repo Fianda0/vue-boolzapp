@@ -57,6 +57,10 @@ button {
     border-bottom: 1px solid lightgrey;
 }
 
+.contatto:hover {
+    background-color: lightgray;
+}
+
 .img-avatar {
     border-radius: 50%;
     padding: 0 0.2rem;
