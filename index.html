@@ -113,69 +113,77 @@
             <div id="right" class="col-8 d-flex flex-column justify-content-between sfondo-wh">
 
                 <!--  Contatto LIVE -->
-                <template v-for="element, i in contacts">
-                    <template v-if="element.visible">
-                        <div class="row py-2 sfondo-gy head-superiore">
-                            <!-- Immagine -->
-                            <div class="col-1 d-flex align-items-center img-avatar">
-                                <img :src="element.avatar" class="img-avatar">
+
+                <div class="row py-2 sfondo-gy head-superiore">
+
+                    <div class="col-1 d-flex align-items-center img-avatar">
+                        <img :src="contacts[chatSelezionata].avatar" class="img-avatar">
+                    </div>
+
+
+                    <!-- Nome contatto -->
+                    <div class="col-9 d-flex justify-content-center flex-column">
+
+                        <div class="row">
+                            <div class="col-12">{{contacts[chatSelezionata].name}}</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 testo-piccolo"> {{lastElement(contacts[chatSelezionata].messages).date}}
                             </div>
+                        </div>
+
+                    </div>
+
+                    <!-- item -->
+                    <div class="col-2 d-flex align-items-center justify-content-end testo-piccolo">
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <span><i class="fa-solid fa-paperclip"></i></span>
+                        <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                    </div>
+
+                </div>
+
+                <!-- Chat LIVE -->
+                <div id="chat" class="row">
+                    <div class="col-12">
 
 
-                            <!-- Nome contatto -->
-                            <div class="col-9 d-flex justify-content-center flex-column">
+                        <template v-for="element, i in contacts[chatSelezionata].messages">
 
-                                <div class="row">
-                                    <div class="col-12">{{element.name}}</div>
+                            <template v-if="element.status=='sent' ">
+                                <div class="row justify-content-evenly">
+                                    <div class="col-4"></div>
+                                    <div class="col-4 bck-green py-1">
+                                        {{element.message}}
+                                        {{element.date}}
+                                    </div>
                                 </div>
+                            </template>
+                            <template v-else>
+                                <div class="row justify-content-evenly">
+                                    <div class="col-4 bck-white py-1">
+                                        {{element.message}}
+                                        {{element.date}}
 
-                                <div class="row">
-                                    <div class="col-12 testo-piccolo"> {{lastElement(element.messages).date}}</div>
+                                    </div>
+                                    <div class="col-4"></div>
                                 </div>
+                            </template>
 
-                            </div>
+                        </template>
+                    </div>
+                </div>
 
-                            <!-- Orario -->
-                            <div class="col-2 d-flex align-items-center justify-content-end testo-piccolo">
-                                <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <span><i class="fa-solid fa-paperclip"></i></span>
-                                <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-                            </div>
+                <!-- Invia Messaggio -->
+                <div class="row py-2 sfondo-gy d-flex align-items-center">
+                    <div class="col-1"><i class="fa-regular fa-face-smile"></i></div>
+                    <div class="col-10"><input @keyup.enter="addMessage(element,i)" class="bord-radius" type="text"
+                            placeholder="Scrivi un messaggio" v-model="myMessage">
+                    </div>
+                    <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
+                </div>
 
-                        </div>
-
-
-                        <!--  Chat -->
-                        <div id="chat" class="row">
-                            <div class="col-12">
-                                <template v-for="messaggio,i in contacts[i].messages">
-                                    <template v-if="messaggio.status=='sent' ">
-                                        <div class="row justify-content-evenly">
-                                            <div class="col-4"></div>
-                                            <div class="col-4 bck-green py-1">{{messaggio.message}}</div>
-                                        </div>
-                                    </template>
-                                    <template v-else>
-                                        <div class="row justify-content-evenly">
-                                            <div class="col-4 bck-white py-1">{{messaggio.message}}</div>
-                                            <div class="col-4"></div>
-                                        </div>
-                                    </template>
-
-                                </template>
-                            </div>
-                        </div>
-
-                        <!--  Invia Messaggio -->
-                        <div class="row py-2 sfondo-gy d-flex align-items-center">
-                            <div class="col-1"><i class="fa-regular fa-face-smile"></i></div>
-                            <div class="col-10"><input @keyup.enter="addMessage(element,i)" class="bord-radius"
-                                    type="text" placeholder="Scrivi un messaggio" v-model="myMessage">
-                            </div>
-                            <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
-                        </div>
-                    </template>
-                </template>
             </div>
         </div>
     </div>

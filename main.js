@@ -172,19 +172,16 @@ createApp({
         date: new Date().toLocaleString(),
         message: 'Ok',
         status: 'recived'
-      }
+      },
+      chatSelezionata: 0
     }
   },
   methods: {
 
+
     clickVisibile(i) {
-      for (let index = 0; index < this.contacts.length; index++) {
-        this.contacts[index].visible = false
-      }
-
-      this.contacts[i].visible = true
       console.log(i)
-
+      this.chatSelezionata = i
     },
 
     lastElement(array) {
@@ -192,20 +189,27 @@ createApp({
       return array[ultimoIndice]
     },
 
-    addMessage(elemento, index) {
+    addMessage() {
       let newMessage = {
         date: new Date().toLocaleString(),
         message: this.myMessage,
         status: 'sent'
       }
-      elemento.messages.push(newMessage)
+
+      this.contacts[this.chatSelezionata].messages.push(newMessage);
       let timer = setTimeout(() => {
-        elemento.messages.push(this.risposta)
+        this.contacts[this.chatSelezionata].messages.push(this.risposta);
       }, 1000)
       this.myMessage = ''
       console.log(elemento.messages);
 
+    },
+    controllo(i) {
+      if (!i == this.chatSelezionata) {
+
+      }
     }
+  }, computed: {
 
   }
 }).mount('#app')
