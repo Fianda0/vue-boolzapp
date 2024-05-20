@@ -199,7 +199,9 @@ createApp({
         status: 'sent'
       }
       elemento.messages.push(newMessage)
-      elemento.messages.push(this.risposta)
+      let timer = setTimeout(() => {
+        elemento.messages.push(this.risposta)
+      }, 1000)
       this.myMessage = ''
       console.log(elemento.messages);
 
